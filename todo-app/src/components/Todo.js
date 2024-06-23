@@ -9,19 +9,19 @@ export const Todo = () => {
   const [items, setItems] = useState([]);
   const [errors, setErrors] = useState({});
 
-  // Load items from local storage when the component mounts
+
   useEffect(() => {
     const storedItems = localStorage.getItem('todoItems');
     if (storedItems) {
       setItems(JSON.parse(storedItems));
-      console.log('Loaded items from local storage:', JSON.parse(storedItems));
+     
     }
   }, []);
 
   // Save items to local storage whenever items state changes
   useEffect(() => {
     localStorage.setItem('todoItems', JSON.stringify(items));
-    console.log('Saved items to local storage:', items);
+   
   }, [items]);
 
   const handleChange = (e) => {
